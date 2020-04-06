@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>Pokeomon Game</title>
+</head>
+
+<body>
+  <div class="gameboy">
+    <div class="line1"></div>
+    <div class="screen">
+      <div class="light">
+        <div class="batteryText">BATTERY</div>
+      </div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+      <div class="dot-matrix"> DOT MATRIX WITH STEREO SOUND </div>
+      
+      <div class="text">
+        <span class="nintendo">Nintendo</span> <em>GAME BOY</em><span class="tm">TM</span>
+      </div>
+      <div id="canvasDiv">
+        <div class="introText"></div>
+        <canvas id="canvas"> </canvas>
+      </div>
+
+      <div class="wrapper">
+        <div class="one">
+          <div class="computerInfo pokemonName" id="computerPokemonName"></div>
+          <div id="computer-health-bar" class="health-bar computer" style="--health:100" data-label=""></div>
+        </div>
+        <div class="two">
+          <div class="battlePokemon">
+            <img class="pokemon" id="computerPokemonImage" src="" alt="" />
+          </div>
+        </div>
+        <div class="three">
+          <div class="battlePokemon">
+            <img class="pokemon" id="playerPokemonImage" src="" alt="" />
+          </div>
+        </div>
+        <div class="four">
+          <div class="playerInfo pokemonName" id="playerPokemonName"></div>
+          <div id="player-health-bar" class="health-bar player" style="--health:100" data-label=""></div>
+        </div>
+        <div class="five dialogueBox"></div>
+        <div id="moveMenu" class="six menu ">
+          <p class="menuItem move" id="move0"></p>
+          <p class="menuItem move" id="move1"></p>
+          <p class="menuItem move" id="move2"></p>
+          <p class="menuItem move" id="move3"></p>
+        </div>
+        <div class="seven menu">
+          <p class="menuItem" id="fight">FIGHT</p>
+          <p class="menuItem" id="pkmn">PKMN</p>
+          <p class="menuItem" id="run">RUN</p>
+          <p class="white">_</p>
+        </div>
+        <div class="eight">
+          <div class="nested">
+            <div class="ChooseYourPokemon">CHOOSE YOUR POKEMON</div>
+            <div class="teamMember" data-index="0">
+              <div>
+                <img class="teamMemberImage" src="" alt="">
+                <span class="teamMemberName"></span></div>
+              <div class="health-bar mini pokemon0" id="pokemon0-health-bar" style="--health:100"> </div>
+            </div>
+
+            <div class="teamMember" data-index="1">
+              <div>
+                <img class="teamMemberImage" src="" alt="">
+                <span class="teamMemberName"></span></div>
+              <div class="health-bar mini pokemon1" id="pokemon1-health-bar" style="--health:100"> </div>
+            </div>
+
+            <div class="teamMember" data-index="2">
+              <div>
+                <img class="teamMemberImage" src="" alt="">
+                <span class="teamMemberName"></span></div>
+              <div class="health-bar mini pokemon2" id="pokemon2-health-bar" style="--health:100"> </div>
+            </div>
+
+            <div class="teamMember" data-index="3">
+              <div>
+                <img class="teamMemberImage" src="" alt="">
+                <span class="teamMemberName"></span></div>
+              <div class="health-bar mini pokemon3" id="pokemon3-health-bar" style="--health:100"> </div>
+            </div>
+
+            <div class="teamMember" data-index="4">
+              <div>
+                <img class="teamMemberImage" src="" alt="">
+                <span class="teamMemberName"></span></div>
+              <div class="health-bar mini pokemon4" id="pokemon4-health-bar" style="--health:100"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dpad">
+      <div class="dpad-up-down"></div>
+      <div class="dpad-left-right"></div>
+      <div class="dpad-centre"></div>
+    </div>
+    <div class="gameButtons">
+      <div class="a-button"><span>A</span></div>
+      <div class="b-button"><span>B</span></div>
+    </div>
+    <div class="optionButtons">
+      <div class="select"><span>SELECT</span></div>
+      <div class="start"><span>START</span></div>
+    </div>
+    <div class="grills">
+      <div class="grill"></div>
+      <div class="inside-grill"></div>
+    </div>
+
+  </div>
+  </div>
+
+  <script src=/js/battle/helpers.js></script>
+  
+  <script src="/js/openWorld/openWorldConfig.js"></script>
+  <script src="/js/openWorld/openWorld.js"></script>
+  <script src="/js/openWorld/pikachu.js"></script>
+
+  <script src="/js/battle/pokemonData.js"></script>
+  <script src="/js/battle/pokemon.js"></script>
+  <script src="/js/battle/setupBattle.js"></script>
+  <script src="/js/battle/battle.js"></script>
+  <script src="/js/battle/createPlayers.js"></script>
+  <script src="/js/battle/battleclickHandlers.js"></script>
+
+  <script src=/js/app.js></script>
+
+</body>
+
+</html>
+<style></style>

@@ -1,0 +1,5 @@
+*.vscode
+*git
+node_modules/
+*Challenges_Decisions.html
+
