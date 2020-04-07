@@ -50,10 +50,10 @@ class Pokemon {
     if (!opponent.alive || !this.alive) {
       return;
     }
-    const move = this.moves[moveNum].url;
-    const moveData = await getMoveData(move);
-    const damage = game.battle.calculateDamage(moveData, this, opponent);
     const moveName = toSentenceCase(this.moves[moveNum].name);
+    const move = this.moves[moveNum].url;
+    const moveData = await getMoveData(move, moveName);
+    const damage = game.battle.calculateDamage(moveData, this, opponent);
     const textToDisplay = `${toSentenceCase(this.name)} used ${moveName}...`;
     await UpdateDialogueBox(textToDisplay, 'dialogueBox');
     opponent.takeDamage(damage);
@@ -107,7 +107,7 @@ class Pokemon {
               `You have run out of pokemon...hopefully Pikachu will be okay fighting alone!`,
               'dialogueBox'
             );
-            const gameDiv = document.querySelector('.wrapper');
+            const gameDiv = document.querySelector('.battleContainer');
             gameDiv.style.display = 'none';
             await game.gameOver();
           } else {

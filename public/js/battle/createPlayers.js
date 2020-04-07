@@ -103,7 +103,7 @@ class Player extends CreatePlayer {
       } else {
         await game.battle.nextBattleDialogue(opponent);
       }
-      document.querySelector('.wrapper').style.display = 'none';
+      document.querySelector('.battleContainer').style.display = 'none';
       this.prepareForNextBattle();
       return;
     }

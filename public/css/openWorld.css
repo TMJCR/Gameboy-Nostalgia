@@ -1,0 +1,30 @@
+.introText {
+    padding: 1em;
+    background-color: white;
+    content: "Thomas";
+    width: 700px;
+    height: 120px;
+    position: absolute;
+    top: 365px;
+    left: 35px;
+    line-height: 2em;
+    border: 8px solid #000;
+    border-radius: 25px;
+    color: black;
+    opacity: 0;
+    transition: all 2s;
+}
+
+.introText span {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+
+
+#canvasDiv {
+    width: 750px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+}

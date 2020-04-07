@@ -67,12 +67,16 @@ class Battle {
   }
   showPokemonSelection() {
     game.pokemonMenuVisible = true;
-    const pokemonMenu = document.querySelector('.eight');
+    const pokemonMenu = document.querySelector('.pokemonList');
+    const playerPokemonImage = document.querySelector('#playerPokemonImage');
     pokemonMenu.style.opacity = 1;
     pokemonMenu.style.display = 'flex';
+    playerPokemonImage.style.display = 'none';
   }
   hidePokemonSelection() {
-    const pokemonMenu = document.querySelector('.eight');
+    const pokemonMenu = document.querySelector('.pokemonList');
+    const playerPokemonImage = document.querySelector('#playerPokemonImage');
+    playerPokemonImage.style.display = 'flex';
     pokemonMenu.style.opacity = 0;
     pokemonMenu.style.display = 'none';
     game.pokemonMenuVisible = false;

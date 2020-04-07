@@ -99,6 +99,7 @@ class SetupBattle {
   }
 
   gameOver() {
+    document.querySelector('.battleContainer').style.display = 'none';
     const gameDiv = document.querySelector('#canvasDiv');
     gameDiv.hidden = false;
     const light = document.querySelector('.light');
@@ -108,12 +109,6 @@ class SetupBattle {
     light.style.background = '#600';
   }
   connectionIssues() {
-    const gameDiv = document.querySelector('#canvasDiv');
-    gameDiv.hidden = false;
-    const light = document.querySelector('.light');
-    const turnedOffScreen = ctx.createPattern(turnedOff, 'repeat');
-    ctx.fillStyle = turnedOffScreen;
-    ctx.fill();
-    light.style.background = '#600';
+    this.gameOver();
   }
 }

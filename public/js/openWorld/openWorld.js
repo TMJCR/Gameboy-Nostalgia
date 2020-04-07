@@ -216,7 +216,7 @@ class OpenWorld {
     }
     const gameDiv = document.querySelector('#canvasDiv');
     gameDiv.hidden = true;
-    const battleDiv = document.querySelector('.wrapper');
+    const battleDiv = document.querySelector('.battleContainer');
     battleDiv.style.display = 'grid';
   }
 }

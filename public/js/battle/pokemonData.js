@@ -17,11 +17,25 @@ async function getPokemonData(pokemonNumber) {
   return pokemonResults;
 }
 
-async function getMoveData(url) {
+async function getMoveData(url, moveName) {
   const moveResults = await axios.get(url).catch((e) => {
-    game.connectionIssues();
-    return;
+    const backupMoveData = {
+      name: moveName,
+      power: 50,
+      accuracy: 100,
+      type: 'normal',
+      damageMultipliers: {
+        doubleDamage: [],
+        halfDamage: [],
+        noDamage: [],
+      },
+      connectionIssues: true,
+    };
+    return backupMoveData;
   });
+  if (moveResults.connectionIssues) {
+    return moveResults;
+  }
   const move = {
     name: moveResults.data.name,
     power: moveResults.data.power,
@@ -34,9 +48,17 @@ async function getMoveData(url) {
 
 async function getMoveTypeEffects(url) {
   const moveTypeEffects = await axios.get(url).catch((e) => {
-    game.connectionIssues();
-    return;
+    const backUpTypeEffects = {
+      doubleDamage: [],
+      halfDamage: [],
+      noDamage: [],
+      connectionIssues: true,
+    };
+    return backUpTypeEffects;
   });
+  if (backUpTypeEffects.connectionIssues) {
+    return moveTypeEffects;
+  }
   const typeEffects = {
     doubleDamage: moveTypeEffects.data.damage_relations.double_damage_to.map(
       (type) => type.name

@@ -49,7 +49,7 @@ async function setUp() {
   game.initiateBattle();
 }
 
-const battleDiv = document.querySelector('.wrapper');
-const selectPokemon = document.querySelector('.eight');
+const battleDiv = document.querySelector('.battleContainer');
+const selectPokemon = document.querySelector('.pokemonList');
 battleDiv.style.display = 'none';
 selectPokemon.style.opacity = '0';

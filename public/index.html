@@ -5,6 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/gameboy.css" />
+  <link rel="stylesheet" href="/css/battle.css" />
+  <link rel="stylesheet" href="/css/openWorld.css" />
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <title>Pokeomon Game</title>
@@ -20,7 +23,7 @@
       <div class="line2"></div>
       <div class="line3"></div>
       <div class="dot-matrix"> DOT MATRIX WITH STEREO SOUND </div>
-      
+
       <div class="text">
         <span class="nintendo">Nintendo</span> <em>GAME BOY</em><span class="tm">TM</span>
       </div>
@@ -29,39 +32,39 @@
         <canvas id="canvas"> </canvas>
       </div>
 
-      <div class="wrapper">
-        <div class="one">
+      <div class="battleContainer">
+        <div class="computerToolbar">
           <div class="computerInfo pokemonName" id="computerPokemonName"></div>
           <div id="computer-health-bar" class="health-bar computer" style="--health:100" data-label=""></div>
         </div>
-        <div class="two">
+        <div class="computerPokemon">
           <div class="battlePokemon">
             <img class="pokemon" id="computerPokemonImage" src="" alt="" />
           </div>
         </div>
-        <div class="three">
+        <div class="playerPokemon">
           <div class="battlePokemon">
             <img class="pokemon" id="playerPokemonImage" src="" alt="" />
           </div>
         </div>
-        <div class="four">
+        <div class="playerToolbar">
           <div class="playerInfo pokemonName" id="playerPokemonName"></div>
           <div id="player-health-bar" class="health-bar player" style="--health:100" data-label=""></div>
         </div>
-        <div class="five dialogueBox"></div>
-        <div id="moveMenu" class="six menu ">
+        <div class="dialogueBoxContainer dialogueBox"></div>
+        <div id="moveMenu" class="moveMenu menu ">
           <p class="menuItem move" id="move0"></p>
           <p class="menuItem move" id="move1"></p>
           <p class="menuItem move" id="move2"></p>
           <p class="menuItem move" id="move3"></p>
         </div>
-        <div class="seven menu">
+        <div class="mainMenu menu">
           <p class="menuItem" id="fight">FIGHT</p>
           <p class="menuItem" id="pkmn">PKMN</p>
           <p class="menuItem" id="run">RUN</p>
           <p class="white">_</p>
         </div>
-        <div class="eight">
+        <div class="pokemonList">
           <div class="nested">
             <div class="ChooseYourPokemon">CHOOSE YOUR POKEMON</div>
             <div class="teamMember" data-index="0">
@@ -121,7 +124,6 @@
     </div>
 
   </div>
-  </div>
 
   <script src=/js/battle/helpers.js></script>
   
@@ -141,4 +143,4 @@
 </body>
 
 </html>
-<style></style>
+
