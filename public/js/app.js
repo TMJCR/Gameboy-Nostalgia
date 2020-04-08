@@ -21,7 +21,7 @@ window.addEventListener('load', async () => {
     animatePickachu();
   }, 250);
   const instructions =
-    'With your team of Pokemon, go and help Pikachu defeat the mighty Gyarados...';
+    'With your team of Pokemon, go and help Pikachu defeat the mighty Gyarados... Press any direction to start your journey...';
   await UpdateDialogueBox(instructions, 'introText');
   keyNavigationDisabled = false;
 });
