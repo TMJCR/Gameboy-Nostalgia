@@ -8,6 +8,10 @@ const publicDirectoryPath = path.join(__dirname, '../public');
 app.use(express.static(publicDirectoryPath));
 
 app.get('/*', (req, res) => {
+  res.send('/index.html');
+});
+
+app.get('/*', (req, res) => {
   res.redirect('/');
 });
 
