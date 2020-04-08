@@ -56,7 +56,7 @@ async function getMoveTypeEffects(url) {
     };
     return backUpTypeEffects;
   });
-  if (backUpTypeEffects.connectionIssues) {
+  if (moveTypeEffects.connectionIssues) {
     return moveTypeEffects;
   }
   const typeEffects = {
