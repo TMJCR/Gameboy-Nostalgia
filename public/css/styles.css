@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --low-health: #cc0000;
+    --mid-health: #ffbb00;
+    --normal-health: #009900;
+    --computer-health-bar: var(--normal-health);
+    --player-health-bar: var(--normal-health);
+    --pokemon0-health-bar: var(--normal-health);
+    --pokemon1-health-bar: var(--normal-health);
+    --pokemon2-health-bar: var(--normal-health);
+    --pokemon3-health-bar: var(--normal-health);
+    --pokemon4-health-bar: var(--normal-health);
+
+}
+
+
 body {
     padding: 0;
     margin: 0;
