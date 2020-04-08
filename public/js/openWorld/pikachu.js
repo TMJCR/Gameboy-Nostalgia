@@ -15,7 +15,7 @@ let pickachuSpriteHeight = pickachuSheetHeight / pickachuRows;
 
 let currentPickachuSpriteFrame = 0;
 let pikachu = new Image();
-pikachu.src = '/img/Pikachu_sprite.png';
+pikachu.src = '/img/pikachuSprite.png';
 
 function updatePickachuAnimation() {
   currentPickachuSpriteFrame = ++currentPickachuSpriteFrame % pickachuCols;
