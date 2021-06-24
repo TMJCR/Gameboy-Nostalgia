@@ -19,15 +19,19 @@ class Computer extends CreatePlayer {}
 
 class Player extends CreatePlayer {
   animatePokeBall() {
-    const image = document.querySelector('#playerPokemonImage');
-    image.style.transition = 'all 0.6s';
-    image.style.margin = '0';
+    const image = document.querySelector("#playerPokemonImage");
+    image.style.transition = "all 0.6s";
+    image.style.margin = "0";
     image.style.opacity = 1;
     setTimeout(() => {
-      image.style.border = '0px solid white';
-      image.style.transform = 'rotate(0deg)';
-      image.style.width = '340px';
+      image.style.border = "0px solid white";
+      image.style.transform = "rotate(0deg)";
+      image.style.width = "340px";
     }, 500);
+  }
+  getFirstAvailablePokemon(team) {
+    const firstNonDeadTeamMemeber = team.findIndex((pokemon) => pokemon.alive);
+    return firstNonDeadTeamMemeber;
   }
   async choosePokemon(num) {
     game.moveInAction = true;
@@ -44,16 +48,16 @@ class Player extends CreatePlayer {
     await this.animatePokeBall();
     this.currentPokemon.resetHealthBar(
       currentPlayerPokemonHealth,
-      'player-health-bar'
+      "player-health-bar"
     );
     await game.battle.updateImageAndName(this.currentPokemon);
     assignMovesToButtons(this.currentPokemon, currentEnemy);
 
     const textToDisplay = `Go ${toSentenceCase(this.currentPokemon.name)} ...`;
-    await UpdateDialogueBox(textToDisplay, 'dialogueBox');
+    await UpdateDialogueBox(textToDisplay, "dialogueBox");
   }
   async prepareForNextBattle() {
-    const gameDiv = document.querySelector('#canvasDiv');
+    const gameDiv = document.querySelector("#canvasDiv");
     gameDiv.hidden = false;
     if (game.finalBattle) {
       await game.gameOver();
@@ -70,12 +74,12 @@ class Player extends CreatePlayer {
       animatePickachu();
     }, 250);
 
-    const image = document.querySelector('#playerPokemonImage');
-    image.src = '';
+    const image = document.querySelector("#playerPokemonImage");
+    image.src = "";
     const pokemonName = document.querySelector(`#playerPokemonName`);
     const pokemonHealthBar = document.querySelector(`#player-health-bar`);
     pokemonHealthBar.style.opacity = 0;
-    pokemonName.innerHTML = '';
+    pokemonName.innerHTML = "";
     game.initiateBattle();
     const computer = game.computer.team.members[game.currentEnemy];
     game.battle.updateImageAndName(computer);
@@ -103,7 +107,7 @@ class Player extends CreatePlayer {
       } else {
         await game.battle.nextBattleDialogue(opponent);
       }
-      document.querySelector('.battleContainer').style.display = 'none';
+      document.querySelector(".battleContainer").style.display = "none";
       this.prepareForNextBattle();
       return;
     }

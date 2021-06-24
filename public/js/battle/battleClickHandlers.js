@@ -1,14 +1,14 @@
 function assignMovesToButtons(pokemon, opponent) {
   const moves = pokemon.preDefinedMoves;
   const moveMenu = document.querySelector(`#moveMenu`);
-  moveMenu.innerHTML = '';
+  moveMenu.innerHTML = "";
   moves.forEach((move, index) => {
-    const moveText = document.createElement('p');
+    const moveText = document.createElement("p");
     moveMenu.appendChild(moveText);
-    moveText.classList.add('menuItem', 'move');
+    moveText.classList.add("menuItem", "move");
     moveText.id = `move${index}`;
     moveText.innerHTML = pokemon.moves[move].name.toUpperCase();
-    moveText.addEventListener('click', () => {
+    moveText.addEventListener("click", () => {
       if (game.dialogueisActive == false || game.moveInAction == false) {
         game.battle.disableMoveSelection();
         game.player.selectAttack(pokemon, opponent, move);
@@ -17,7 +17,7 @@ function assignMovesToButtons(pokemon, opponent) {
   });
 }
 
-document.querySelector('#pkmn').addEventListener('click', () => {
+document.querySelector("#pkmn").addEventListener("click", () => {
   if (game.dialogueisActive || game.moveInAction || game.pokemonMenuVisible) {
     return;
   }
@@ -26,21 +26,27 @@ document.querySelector('#pkmn').addEventListener('click', () => {
   game.battle.inActiveBattle = true;
 });
 
-document.querySelector('#fight').addEventListener('click', async () => {
+document.querySelector("#fight").addEventListener("click", async () => {
   if (!game.dialogueisActive && !game.battle.inActiveBattle) {
     game.battle.hidePokemonSelection();
     await game.battle.preparePlayerPokemonImage();
-    game.player.choosePokemon(0);
+    const startingPokemon = game.player.getFirstAvailablePokemon(
+      game.player.team.members
+    );
+    game.player.choosePokemon(startingPokemon);
     game.battle.inActiveBattle = true;
   }
 });
 
-document.querySelector('#run').addEventListener('click', async () => {
+document.querySelector("#run").addEventListener("click", async () => {
   if (!game.dialogueisActive && !game.battle.inActiveBattle) {
     game.battle.hidePokemonSelection();
     const textToDisplay = `You can't run from this battle...you need to save Pickachu...`;
-    await UpdateDialogueBox(textToDisplay, 'dialogueBox');
-    game.player.choosePokemon(0);
+    await UpdateDialogueBox(textToDisplay, "dialogueBox");
+    const startingPokemon = game.player.getFirstAvailablePokemon(
+      game.player.team.members
+    );
+    game.player.choosePokemon(startingPokemon);
     game.battle.inActiveBattle = true;
   }
 });
