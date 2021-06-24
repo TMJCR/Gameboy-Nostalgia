@@ -1,5 +1,5 @@
 A nostalgic Pokemon game in the style of the original Gameboy version:
-Live Demo: http://gameboy-nostalgia.herokuapp.com/
+Live Demo: https://gameboy-classic.herokuapp.com/
 
 The game consists of two modes:
 
