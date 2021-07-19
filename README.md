@@ -13,6 +13,7 @@ The game consists of two modes:
 This uses an open source Pokemon API for Pokemon information and statistics.
 A dynamic damage system has been developed which uses different characteristics to calculate damage based on the type of attack, the Pokemon type and the corresponding attack and defence attributes of both the attacking and defending Pokemon. These are based on calculations used in the original game to offer a closer playing experience to the original.
 
+
 - How I built this:
 Being my first project of relative complexity, I chose to focus entirely on vanilla Javascript. The game was a favourite of mine as a child so I had a good understanding of how the end project should turn out. I built the two modes of the game - the "open-world" and battle mode - as separate components which would be rendered to the screen based on which state the player is currently in.
 I used an open source Pokemon API for information and statistics of the Pokemon characters, as well as images. I then built a dynamic damage system which is analogous to the original damage system in the Nintendo games; which calculates damage based on the type of attack, the Pokemon type and the corresponding attack and defence attributes of both the attacking and defending Pokemon.  
