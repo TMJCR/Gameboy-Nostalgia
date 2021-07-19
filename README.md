@@ -1,17 +1,15 @@
-A nostalgic Pokemon game in the style of the original Gameboy version:
-Live Demo: https://gameboy-classic.herokuapp.com/
+A nostalgic Pokemon game in the style of the original Gameboy version. 
 
-<img src="./Thumbnail.png">
-
-The game consists of two modes:
-
- - An "open world" stage:
+- An "open world" stage:
   This makes use of HTML Canvas to animate a sprite on the screen.
   When the character enters the grass there is a chance that they will encounter an enemy Pokemon. 
   
  - A battle mode :
-This uses an open source Pokemon API for Pokemon information and statistics.
 A dynamic damage system has been developed which uses different characteristics to calculate damage based on the type of attack, the Pokemon type and the corresponding attack and defence attributes of both the attacking and defending Pokemon. These are based on calculations used in the original game to offer a closer playing experience to the original.
+
+Live Demo: https://gameboy-classic.herokuapp.com/
+
+<img src="./Thumbnail.png">
 
 - How I built this:
 Being my first project of relative complexity, I chose to focus entirely on vanilla Javascript. The game was a favourite of mine as a child so I had a good understanding of how the end project should turn out. I built the two modes of the game - the "open-world" and battle mode - as separate components which would be rendered to the screen based on which state the player is currently in.
