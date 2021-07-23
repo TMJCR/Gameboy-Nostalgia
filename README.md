@@ -1,3 +1,4 @@
+# Gameboy Nostalgia
 A nostalgic Pokemon game built in vanilla javascript. The game is built to resemble the style of the original Gameboy version with an "open world" stage, where a sprite is controlled on-screen to navigate through an enemy-filled terrain and a battle mode, where the player can choose from their team of Pokemon and select from a set of attack moves to defeat their opponents. 
 
 Live Demo: https://gameboy-classic.herokuapp.com/
