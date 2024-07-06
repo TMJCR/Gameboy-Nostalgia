@@ -2,16 +2,16 @@ let keyNavigationDisabled = true;
 const canvasWidth = 750;
 const canvasHeight = 500;
 
-const canvas = document.querySelector('#canvas');
+const canvas = document.querySelector("#canvas");
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
-var ctx = canvas.getContext('2d');
+var ctx = canvas.getContext("2d");
 const terrain = new Image();
-terrain.src = '/img/terrain.png';
+terrain.src = "./public/img/terrain.png";
 const turnedOff = new Image();
-turnedOff.src = '/img/turnedOff.png';
+turnedOff.src = "./public/img/turnedOff.png";
 
-const turnedOffColor = '#ae9132';
+const turnedOffColor = "#ae9132";
 ctx.fillStyle = turnedOffColor;
 ctx.rect(0, 0, canvasWidth, canvasHeight);
 ctx.fill();
@@ -74,7 +74,7 @@ const spriteWidth = spriteSheetWidth / cols;
 const spriteHeight = spriteSheetHeight / rows;
 
 const character = new Image();
-character.src = '/img/Ash.png';
+character.src = "./public/img/Ash.png";
 
 speed = 10;
 let currentFrame = 0;
